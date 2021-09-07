@@ -24,6 +24,11 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 -       boolean=> ['1'|'0']
 -       short=> ['y'|'n'], ['t'|'f']
 -       long=> ['yes'|'no'], ['true'|'false']
+
+
+# Example in real use of the table in Machine Learning Cleaning data process:
+![Screenshot of the Real use of simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_1.png?raw=true)
+Important Note: You need to calc the values before the output. The values represented in the image are calculated in other class (soon be published). The table only shows in correct visual format the values given.
  
  # REQUERIMENTS:
  
@@ -77,6 +82,105 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 
 - Result Default simple table:
 ![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_2.png?raw=true)
+ 
+ - Draw the table with Raw input data. This code takes advantage of the previously created class. If it has not been created before, it must be created with $ cli_table = new cli_math_ml_table ($ Values);:
+
+        // simple table with raw values
+        $table_format=[];
+        $table_format['yes_no_col']['output_format'] = 'raw';
+        $table_format['ok_ko_col']['output_format'] = 'raw';
+        $table_format['true_false_col']['output_format'] = 'raw';
+
+        echo "Default simple table with RAW values:".PHP_EOL;
+        $cli_table->set_table_format( $table_format, $Values );
+        $cli_table->draw();
+
+- Result Default simple table:
+![Screenshot of the table with Raw Values for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_3.png?raw=true)
+ 
+ - Draw the table with CUSTOM format. This code takes advantage of the previously created class. If it has not been created before, it must be created with $ cli_table = new cli_math_ml_table ($ Values);:
+
+        // Cols with special format
+        $col_special_format = [
+            [ 'col_name' => 'Boolean Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' , 'background_color' => 'blue']
+        ];
+        
+        // rows with special format
+        $row_special_format = [
+            [ 'row_name' => '[7]Test Name8', 'text_color' => 'lightyellow', 'text_decoration' => 'double_underline', 'background_color' => 'red']
+        ];
+        
+        // Fields with Special Format
+        $fields_special_format = [
+            [ 'row_name' => '[2]Test Name3', 'col_name' => 'Numeric Col', 'text_color' => 'orange', 'text_decoration' => 'bold' ],
+            [ 'row_name' => '[1]Test Name2', 'col_name' => 'String Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' ],
+            [ 'row_name' => '[2]Test Name3', 'col_name' => 'True False Col', 'text_color' => 'blue',
+              'text_decoration' => 'strikethrough', 'background_color' => 'yellow']
+        ];
+        
+        // Table format with all possibilities example
+        // In this example we change:
+        // - 'indiv_formats'
+        // - 'col_formats'
+        // - 'row_formats'
+        // - 'padding_cells_left'
+        // - 'padding_cells_right'
+        // - 'margin_left'
+        // - 'margin_right'
+        // - 'margin_top'
+        // - 'margin_bottom'
+        // - 'reverse_headers'
+        $default_table_format = [
+            'indiv_formats' => $fields_special_format,
+            'col_formats' => $col_special_format,
+            'row_formats' => $row_special_format,
+            'padding_cells_left' => 2,
+            'padding_cells_right' => 2,
+            'margin_left' => 10,
+            'margin_right' => 2,
+            'margin_top' => 2,
+            'margin_bottom' => 2,
+            'reverse_headers' => true,
+            'padding_cells_left' => 1,
+            'padding_cells_right' => 1,
+            'border_style' => 'simple', // Style of borders ['simple'|'single'|'double'|'dobule_single'] ! NOT working for now. Use only 'simple'
+            'negative_numeric_in_red' => true,
+            'yes_no_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 'y', 'yes', 'orinal_value_without_formatting']
+            ],
+            'true_false_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 't', 'true', 'orinal_value_without_formatting']
+            ],
+            'booelan_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'raw' // ['raw'|null]
+            ],
+            'ok_ko_col' =>[
+                'bold' => true,
+                'colored' =>[
+                    'color_positive' => 'lightgreen',
+                    'color_negative' => 'lightred'
+                    ],
+                 'output_format' => 'raw' // ['raw'|null]
+            ]
+        ];
+
+- Result Customized table:
+![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_4.png?raw=true)
 
 **TEST:**
 
