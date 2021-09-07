@@ -77,7 +77,11 @@ Important Note: You need to calc the values before the output. The values repres
                 ['[9]Test Name10      ', '10   ',        'Test 1   ',   'yes   ',     'true   ',         'ok   ',     '1   '],
                 ['[10]Test Name11',       null,           null,         null,         null,              null,        null],
             ];
+
+ - When you have the class created, you can to reuse it changing the format or the values with:
  
+         $cli_table->set_table_format( $table_format, $Values );
+
  - Create the Class with the Values and draw the table:
 
         // simple table
