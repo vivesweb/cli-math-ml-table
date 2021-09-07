@@ -184,8 +184,29 @@ Important Note: You need to calc the values before the output. The values repres
 **CONFIG VALUES:**
 
 - indiv_formats: Array of individual formats (each cell)
+
+    - row_name: [string] Name of the row to be formatted
+    - col_name: [string] Name of the column to be formatted
+    - text_color: [string] Colour of the text
+    - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
+    - background_color:[string] Colour of the background
+
+
 - col_formats: Array of whole cols format
+
+    - col_name: [string] Name of the column to be formatted
+    - text_color: [string] Colour of the text
+    - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
+    - background_color:[string] Colour of the background
+
 - row_formats: Array of whole rows format
+
+    - row_name: [string] Name of the row to be formatted
+    - text_color: [string] Colour of the text
+    - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
+    - background_color:[string] Colour of the background
+
+
 - padding_cells_left: Num of Chars to padd left each cell
 - padding_cells_right: Num of Chars to padd right each cell
 - margin_left: Num of Chars of margin left table
@@ -194,8 +215,8 @@ Important Note: You need to calc the values before the output. The values repres
 - margin_bottom: Num of Chars of margin bottom table
 - reverse_headers: [Boolean] Change inverse colours of headers
 - border_style: [string] ['simple'|'single'|'double'|'dobule_single'] Type of borders. ! NOT working for now. Use only 'simple'
-- negative_numeric_in_red: [Boolean] 
-            'yes_no_col' =>[
+- negative_numeric_in_red: [Boolean] Echo negative numeric cols in red if the number is negative
+- yes_no_col: Array of col yes_no
                 'bold' => false,
                 'colored' =>[
                     'color_positive' => 'green',
