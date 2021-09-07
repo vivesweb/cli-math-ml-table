@@ -183,71 +183,79 @@ Important Note: You need to calc the values before the output. The values repres
 
 **CONFIG VALUES:**
 
-- indiv_formats: Array of individual formats (each cell)
+- indiv_formats: [Array] of individual formats (each cell)
 
     - row_name: [string] Name of the row to be formatted
     - col_name: [string] Name of the column to be formatted
     - text_color: [string] Colour of the text
     - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
-    - background_color:[string] Colour of the background
+    - background_color: [string] Colour of the background
 
 
-- col_formats: Array of whole cols format
+- col_formats: [Array] of whole cols format
 
     - col_name: [string] Name of the column to be formatted
     - text_color: [string] Colour of the text
     - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
-    - background_color:[string] Colour of the background
+    - background_color: [string] Colour of the background
 
-- row_formats: Array of whole rows format
+- row_formats: [Array] of whole rows format
 
     - row_name: [string] Name of the row to be formatted
     - text_color: [string] Colour of the text
     - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
-    - background_color:[string] Colour of the background
+    - background_color: [string] Colour of the background
 
 
-- padding_cells_left: Num of Chars to padd left each cell
-- padding_cells_right: Num of Chars to padd right each cell
-- margin_left: Num of Chars of margin left table
-- margin_right: Num of Chars of margin right table
-- margin_top: Num of Chars of margin top table
-- margin_bottom: Num of Chars of margin bottom table
+- padding_cells_left: [int] Num of Chars to padd left each cell
+- padding_cells_right: [int] Num of Chars to padd right each cell
+- margin_left: [int] Num of Chars of margin left table
+- margin_right: [int] um of Chars of margin right table
+- margin_top: [int] Num of Chars of margin top table
+- margin_bottom: [int] Num of Chars of margin bottom table
 - reverse_headers: [Boolean] Change inverse colours of headers
 - border_style: [string] ['simple'|'single'|'double'|'dobule_single'] Type of borders. ! NOT working for now. Use only 'simple'
 - negative_numeric_in_red: [Boolean] Echo negative numeric cols in red if the number is negative
-- yes_no_col: Array of col yes_no
-                'bold' => false,
-                'colored' =>[
-                    'color_positive' => 'green',
-                    'color_negative' => 'red'
-                    ],
-                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 'y', 'yes', 'orinal_value_without_formatting']
+- yes_no_col: [Array] of col yes_no
+
+    - bold: [Boolean] If the column yes_no is Bold or not
+    - colored: [Array] of Colours
+    
+        - color_positive: [string] Colour of 'yes' values
+        - color_negative: [string] Colour of 'no' values
+        
+     - output_format: [string] ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 'y', 'yes', 'orinal_value_without_formatting']
             ],
-            'true_false_col' =>[
-                'bold' => false,
-                'colored' =>[
-                    'color_positive' => 'green',
-                    'color_negative' => 'red'
-                    ],
-                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 't', 'true', 'orinal_value_without_formatting']
-            ],
-            'booelan_col' =>[
-                'bold' => false,
-                'colored' =>[
-                    'color_positive' => 'green',
-                    'color_negative' => 'red'
-                    ],
-                'output_format' => 'raw' // ['raw'|null]
-            ],
-            'ok_ko_col' =>[
-                'bold' => true,
-                'colored' =>[
-                    'color_positive' => 'lightgreen',
-                    'color_negative' => 'lightred'
-                    ],
-                 'output_format' => 'raw' // ['raw'|null]
-            ]
+
+- true_false_col: [Array] of col true_false
+
+    - bold: [Boolean] If the column yes_no is Bold or not
+    - colored: [Array] of Colours
+    
+        - color_positive: [string] Colour of 'true' values
+        - color_negative: [string] Colour of 'false' values
+        
+     - output_format: [string] ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 't', 'true', 'orinal_value_without_formatting']
+
+- booelan_col: [Array] of col boolean
+
+    - bold: [Boolean] If the column yes_no is Bold or not
+    - colored: [Array] of Colours
+    
+        - color_positive: [string] Colour of '1' values
+        - color_negative: [string] Colour of '0' values
+        
+     - output_format: [string] ['raw'|null]
+
+- ok_ko_col: [Array] of col ok_ko
+
+    - bold: [Boolean] If the column ok_ko is Bold or not
+    - colored: [Array] of Colours
+    
+        - color_positive: [string] Colour of 'ok' values
+        - color_negative: [string] Colour of 'ko' values
+        
+     - output_format: [string] ['raw'|null]
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
