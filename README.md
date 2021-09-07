@@ -256,6 +256,17 @@ Important Note: You need to calc the values before the output. The values repres
         - color_negative: [string] Colour of 'ko' values
         
      - output_format: [string] ['raw'|null]
+
+**TEXT COLORS**
+- 'lightblue', 'lightred', 'lightgreen', 'lightyellow', 'lightblack', 'lightmagenta', 'lightcyan', 'lightwhite', 'blue', 'red', 'green', 'yellow', 'black', 'magenta', 'cyan', 'white', 'orange', 'reset'
+* Colour 'orange' if supported by the terminal
+
+**BACKGROUND COLORS**
+- 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'light_gray'
+
+**TEXT DECORATION**
+- ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']
+* Some values maybe they won't work.
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
