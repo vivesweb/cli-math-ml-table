@@ -61,7 +61,7 @@ Important Note: You need to calc the values before the output. The values repres
  
  # BASIC USAGE:
 
- - When you have the class created, you can to reuse it changing the format or the values with:
+ - Note: When you have the class created, you can to reuse it changing the format or the values with:
  
          $cli_table->set_table_format( $table_format, $Values );
  
