@@ -1,9 +1,9 @@
 # cli-math-ml-table
-PHP-CLI math table generation for helps in Machine Learning input features cleaning process. You can use this table to visualize any type of data, but incorporates features intended for the use of dataset cleansing.
+PHP-CLI math table is used for view data structure in format table. Has features oriented to datasets before deep learning process. Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable visualization.
 
-You need always clean your data in the dataset before process of deep learning. If you have wrong, empty data, the model will not work properly. You have to pass quality data. Knowing what structure the data of the dataset has to be able to 'fix' it before the process is essential, and the table helps to visualize this data in a simple way to identify it.
+You need always clean your data in the dataset before process of deep learning. If you have wrong, empty data, values that can be splitted (as datetimes fields), the model will not work properly. You have to pass quality data. Knowing what structure the data of the dataset has to be able to 'fix' it before the process is essential, and the cli-math-ml-table helps to visualize this data in a simple way to identify it.
 
-**Cli-math-ml-table class** is used to visualize the data, but it does not calculate anything. It only helps to visualize them in a correct way. To pass the data to this class, you have to use dataset techniques and Data engineering processes. The class that performs them will be published soon.
+To pass the data to this class, you have to use dataset techniques and Data engineering processes before. The class that performs them will be published soon.
 
 ## Data engineering support Class in PHP that visualize data in table format to detect errors in input datasets. It will help you visually to get a consistent datasets.
 
@@ -31,7 +31,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 -       long => ['yes'|'no'], ['true'|'false']
 
 
-# Example in real use of the table in Machine Learning Cleaning data process:
+# Example in real use of the visualization data in format table, in Machine Learning Cleaning data process:
 ![Screenshot of the Real use of simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_1.png?raw=true)
 Important Note: You need to calc the values before the output. The values represented in the image are calculated in other class (soon be published). The table only shows in correct visual format the values given.
  
