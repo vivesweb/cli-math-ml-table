@@ -1,4 +1,4 @@
-# cli-math-ml-table. Used for view data structure in format table. Has features oriented to datasets before deep learning process.
+# cli-math-ml-table. View data structure in table format. Has features oriented to datasets before deep learning process.
 
 Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable way.
 
