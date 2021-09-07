@@ -5,11 +5,11 @@ PHP-CLI math table generation for helps in Machine Learning input features clean
 
 The table incorporates useful elements focused on achieving optimal dataset quality, so certain values have to be analyzed and presented in a specific way.
 - Detects types. Align & Color them automatically to get a better visualization values.
-- Detects Boolean in cols with only ['1'|'0'|empty|null] values
-- Detects Yes/No in cols with only ['y'|'n'|'yes'|'no'|empty|null] values
-- Detects True/False in cols with only ['t'|'f'|'true'|'false'|'1'|'0'|empty|null] values
-- Detects Ok/Ko in cols with only ['ok'|'ko'|empty|null] values
-- Detects Numeric in cols with only [Number|'na'|'nan'|empty|null] values
+- Detects Boolean in cols with only ['1'|'0'|'-'|empty|null] values
+- Detects Yes/No in cols with only ['y'|'n'|'yes'|'no'|'-'|empty|null] values
+- Detects True/False in cols with only ['t'|'f'|'true'|'false'|'1'|'0'|'-'|empty|null] values
+- Detects Ok/Ko in cols with only ['ok'|'ko'|'-'|empty|null] values
+- Detects Numeric in cols with only [Number|'na'|'nan'|'-'|empty|null] values
 - Repeat Header every 20 rows for better visualization
 - Color automatically negative numbers in red
 - Color automatically Boolean 1, ok, yes & true types in green
@@ -111,7 +111,7 @@ Important Note: You need to calc the values before the output. The values repres
             [ 'row_name' => '[7]Test Name8', 'text_color' => 'lightyellow', 'text_decoration' => 'double_underline', 'background_color' => 'red']
         ];
         
-        // Fields with Special Format
+        // Cell Fields with Special Format
         $fields_special_format = [
             [ 'row_name' => '[2]Test Name3', 'col_name' => 'Numeric Col', 'text_color' => 'orange', 'text_decoration' => 'bold' ],
             [ 'row_name' => '[1]Test Name2', 'col_name' => 'String Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' ],
@@ -142,8 +142,6 @@ Important Note: You need to calc the values before the output. The values repres
             'margin_top' => 2,
             'margin_bottom' => 2,
             'reverse_headers' => true,
-            'padding_cells_left' => 1,
-            'padding_cells_right' => 1,
             'border_style' => 'simple', // Style of borders ['simple'|'single'|'double'|'dobule_single'] ! NOT working for now. Use only 'simple'
             'negative_numeric_in_red' => true,
             'yes_no_col' =>[
@@ -183,8 +181,52 @@ Important Note: You need to calc the values before the output. The values repres
 - Result Customized table:
 ![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_4.png?raw=true)
 
-**TEST:**
+**CONFIG VALUES:**
 
+- indiv_formats: Array of individual formats (each cell)
+- col_formats: Array of whole cols format
+- row_formats: Array of whole rows format
+- padding_cells_left: Num of Chars to padd left each cell
+- padding_cells_right: Num of Chars to padd right each cell
+- margin_left: Num of Chars of margin left table
+- margin_right: Num of Chars of margin right table
+- margin_top: Num of Chars of margin top table
+- margin_bottom: Num of Chars of margin bottom table
+- reverse_headers: [Boolean] Change inverse colours of headers
+- border_style: [string] ['simple'|'single'|'double'|'dobule_single'] Type of borders. ! NOT working for now. Use only 'simple'
+- negative_numeric_in_red: [Boolean] 
+            'yes_no_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 'y', 'yes', 'orinal_value_without_formatting']
+            ],
+            'true_false_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'short' // ['boolean'|'short'|'long'|'raw'|null] will transform in ['1', 't', 'true', 'orinal_value_without_formatting']
+            ],
+            'booelan_col' =>[
+                'bold' => false,
+                'colored' =>[
+                    'color_positive' => 'green',
+                    'color_negative' => 'red'
+                    ],
+                'output_format' => 'raw' // ['raw'|null]
+            ],
+            'ok_ko_col' =>[
+                'bold' => true,
+                'colored' =>[
+                    'color_positive' => 'lightgreen',
+                    'color_negative' => 'lightred'
+                    ],
+                 'output_format' => 'raw' // ['raw'|null]
+            ]
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
