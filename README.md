@@ -4,6 +4,8 @@ Anyway you can to use this class to visualize any type of data. It cannot do any
 
 You need always clean your data in the dataset before process of deep learning. If you have wrong, empty data, values that can be splitted (as datetimes fields), the model will not work properly. You have to pass quality data. Knowing what structure the data of the dataset has to be able to 'fix' it before the process is essential, and the cli-math-ml-table helps to visualize this data in a simple way to identify it.
 
+The library is prepared to be used in the PHP-CLI environment.
+
 To pass the data to this class, you have to use dataset techniques and Data engineering processes before. The class that performs them will be published soon.
 
 ## Data engineering support Class in PHP that visualize data in table format to detect errors in input datasets. It will help you visually to get a consistent datasets.
