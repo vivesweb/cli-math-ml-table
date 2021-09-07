@@ -24,11 +24,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Customizable Text Color in all 1 row, all 1 col or a single cell
 - Customizable Background Color in all 1 row, all 1 col or a single cell
 - Customizable Text Decoration [bold, underline, strikethrought, ...] in all 1 row, all 1 col or a single cell
-- Customizable output format for Yes/No or True/False cols with:
--       raw => Original Value
--       boolean => ['1'|'0']
--       short => ['y'|'n'], ['t'|'f']
--       long => ['yes'|'no'], ['true'|'false']
+- Customizable output format for Yes/No or True/False cols with Raw data, boolean, short o long formats
 
 
 # Example in real use of the visualization data in format table, in Machine Learning Cleaning data process:
