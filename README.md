@@ -8,7 +8,7 @@ The library is prepared to be used in the PHP-CLI environment.
 
 To pass the data to this class, you have to use dataset techniques and Data engineering processes before. The class that performs them will be published soon.
 
-## Data engineering support Class in PHP that visualize data in table format to detect errors in input datasets. It will help you visually to get a consistent datasets.
+## Data engineering support Class in PHP that visualize data in table format to detect errors in ML datasets. It will help you visually to get a consistent datasets.
 
 The table incorporates useful elements focused on achieving optimal dataset quality, so certain values have to be analyzed and presented in a specific way.
 - Detects types. Align & Color them automatically to get a better visualization values.
