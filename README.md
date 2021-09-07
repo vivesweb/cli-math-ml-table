@@ -1,5 +1,5 @@
 # cli-math-ml-table
-PHP-CLI math table is used for view data structure in format table. Has features oriented to datasets before deep learning process. Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable visualization.
+PHP-CLI math table is used for view data structure in format table. Has features oriented to datasets before deep learning process. Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable way.
 
 You need always clean your data in the dataset before process of deep learning. If you have wrong, empty data, values that can be splitted (as datetimes fields), the model will not work properly. You have to pass quality data. Knowing what structure the data of the dataset has to be able to 'fix' it before the process is essential, and the cli-math-ml-table helps to visualize this data in a simple way to identify it.
 
