@@ -228,7 +228,7 @@ Important Note: You need to calc the values before the output. The values repres
 - margin_bottom: [int] Num of Chars of margin bottom table
 - reverse_headers: [Boolean] Change inverse colours of headers
 - border_style: [string] ['simple'|'single'|'double'|'dobule_single'] Type of borders. ! NOT working for now. Use only 'simple'
-- negative_numeric_in_red: [Boolean] Echo negative numeric cols in red if the number is negative
+- negative_numeric_in_red: [Boolean] Echo negative numeric values in red
 - yes_no_col: [Array] of col yes_no
 
     - bold: [Boolean] If the column yes_no is Bold or not
