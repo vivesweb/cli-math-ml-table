@@ -18,7 +18,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Detects Ok/Ko in cols with only ['ok'|'ko'|'-'|empty|null] values
 - Detects Numeric in cols with only [Number|'na'|'nan'|'-'|empty|null] values
 - Autoadjust cols width
-- Repeat Header every 20 rows for better visualization
+- Repeat Header every 20 rows for better visualization when we have big cols dataset
 - Color automatically negative numbers in red
 - Color automatically Boolean 1, ok, yes & true types in green
 - Color automatically Boolean 0, ko, no & false types in red
