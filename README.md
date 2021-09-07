@@ -76,7 +76,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
         $cli_table->draw();
 
 - Result Default simple table:
-![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/texample_cli_math_ml_table_2.png?raw=true)
+![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_2.png?raw=true)
 
 **TEST:**
 
