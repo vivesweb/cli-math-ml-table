@@ -21,9 +21,9 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Customizable Text Decoration [bold, underline, strikethrought, ...] in all 1 row, all 1 col or a single cell
 - Customizable output format for Yes/No or True/False cols with:
 -       raw => Original Value
--       boolean=> ['1'|'0']
--       short=> ['y'|'n'], ['t'|'f']
--       long=> ['yes'|'no'], ['true'|'false']
+-       boolean => ['1'|'0']
+-       short => ['y'|'n'], ['t'|'f']
+-       long => ['yes'|'no'], ['true'|'false']
 
 
 # Example in real use of the table in Machine Learning Cleaning data process:
@@ -83,7 +83,7 @@ Important Note: You need to calc the values before the output. The values repres
 - Result Default simple table:
 ![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_2.png?raw=true)
  
- - Draw the table with Raw input data. This code takes advantage of the previously created class. If it has not been created before, it must be created with $ cli_table = new cli_math_ml_table ($ Values);:
+ - Draw the table with Raw input data. This code takes advantage of the previously created class. If it has not been created before, it must be created with $cli_table = new cli_math_ml_table($Values);:
 
         // simple table with raw values
         $table_format=[];
@@ -95,10 +95,10 @@ Important Note: You need to calc the values before the output. The values repres
         $cli_table->set_table_format( $table_format, $Values );
         $cli_table->draw();
 
-- Result Default simple table:
+- Result simple table with RAW values:
 ![Screenshot of the table with Raw Values for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_3.png?raw=true)
  
- - Draw the table with CUSTOM format. This code takes advantage of the previously created class. If it has not been created before, it must be created with $ cli_table = new cli_math_ml_table ($ Values);:
+ - Draw the table with CUSTOM format. This code takes advantage of the previously created class. If it has not been created before, it must be created with $cli_table = new cli_math_ml_table($Values);:
 
         // Cols with special format
         $col_special_format = [
