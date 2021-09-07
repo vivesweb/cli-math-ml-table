@@ -49,7 +49,7 @@ Important Note: You need to calc the values before the output. The values repres
  
  *cli-math-ml-table.class.php* -> **Master class**. This file is the main file that you need to include in your code.
  
- *cli-math-ml-table-cell.class.php* -> **Child class**. This file has operations on individual cells. Is included in cli-math-ml-table.class.php.
+ *cli-math-ml-table-cell.class.php* -> **Child class**. Operations on individual cells. Is included in cli-math-ml-table.class.php.
  
  *example.php* -> **Code with example use of the class**
  
