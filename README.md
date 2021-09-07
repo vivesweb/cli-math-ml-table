@@ -61,7 +61,7 @@ Important Note: You need to calc the values before the output. The values repres
  
  # BASIC USAGE:
  
- - Create a array with the values. First Row & Col will be Headers:
+ - Create an array with the values. First Row & Col will be Headers. cli-math-ml-table will detect the format of each col :smiley::
  
         $Values = [ 
                 ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col'],
@@ -271,6 +271,7 @@ Important Note: You need to calc the values before the output. The values repres
 **TEXT DECORATION**
 - ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']
 * Some values maybe they won't work.
+* If 'bold' doesn't work. Tray to use 'light' colours
  
  **Of course. You can use it freely :vulcan_salute::alien:**
  
