@@ -1,5 +1,5 @@
 # cli-math-ml-table
-PHP-CLI math table generation for help in Machine Learning input features cleaning process. You can use this table to visualize any type of data, but incorporates features intended for the use of dataset cleansing.
+PHP-CLI math table generation for helps in Machine Learning input features cleaning process. You can use this table to visualize any type of data, but incorporates features intended for the use of dataset cleansing.
 
 ## Data engineering support Class in PHP that visualize data in table format to detect errors in input datasets. It will help you visually to get a consistent datasets.
 
@@ -75,6 +75,8 @@ The table incorporates useful elements focused on achieving optimal dataset qual
         $cli_table = new cli_math_ml_table( $Values );
         $cli_table->draw();
 
+- Result Default simple table:
+![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/texample_cli_math_ml_table_2.png?raw=true)
 
 **TEST:**
 
