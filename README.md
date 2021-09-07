@@ -1,6 +1,10 @@
 # cli-math-ml-table
 PHP-CLI math table generation for helps in Machine Learning input features cleaning process. You can use this table to visualize any type of data, but incorporates features intended for the use of dataset cleansing.
 
+You need always clean your data in the dataset before process of deep learning. If you have wrong, empty data, the model will not work properly. You have to pass quality data. Knowing what structure the data of the dataset has to be able to 'fix' it before the process is essential, and the table helps to visualize this data in a simple way to identify it.
+
+**Cli-math-ml-table class** is used to visualize the data, but it does not calculate anything. It only helps to visualize them in a correct way. To pass the data to this class, you have to use dataset techniques and Data engineering processes. The class that performs them will be published soon.
+
 ## Data engineering support Class in PHP that visualize data in table format to detect errors in input datasets. It will help you visually to get a consistent datasets.
 
 The table incorporates useful elements focused on achieving optimal dataset quality, so certain values have to be analyzed and presented in a specific way.
