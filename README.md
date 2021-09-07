@@ -183,6 +183,11 @@ Important Note: You need to calc the values before the output. The values repres
                  'output_format' => 'raw' // ['raw'|null]
             ]
         ];
+        
+        // Customized table
+        echo "Customized table:".PHP_EOL;
+        $cli_table->set_table_format( $default_table_format, $Values );
+        $cli_table->draw();
 
 - Result Customized table:
 ![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_4.png?raw=true)
