@@ -298,6 +298,6 @@ Important Note: You need to calc the values before the output. The values repres
  
  @since September 2021
  
- @version 1.0.0
+ @version 1.0.1
  
  @license GNU General Public License v3.0
