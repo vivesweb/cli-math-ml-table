@@ -212,7 +212,7 @@ Important Note: You need to calc the values before the output. The values repres
 - col_formats: [Array] of whole cols format
 
     - col_name: [string] Name of the column to be formatted
-    - max_chars: [integer] Number of max width of column in chars for nambers
+    - max_chars: [integer] Number of max width of column in chars for numbers
     - text_color: [string] Colour of the text
     - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
     - background_color: [string] Colour of the background
