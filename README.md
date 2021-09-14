@@ -1,6 +1,6 @@
 # View data structure in table format with features oriented to detect wrong data in datasets before deep learning process.
 
-# V.1.0.1
+## V.1.0.1
 
 Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable way.
 
