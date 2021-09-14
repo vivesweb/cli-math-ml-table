@@ -26,6 +26,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Color automatically in Bold Ok/Ko type (is important in ML cols datasets to know if the col is Ok or KO).
 - Customizable Inverse Headers
 - Customizable Text Color in all 1 row, all 1 col or a single cell
+- Customizable Width in a column for numbers. Numbers greatter than width will be parsed to >99999 | <-9999
 - Customizable Background Color in all 1 row, all 1 col or a single cell
 - Customizable Text Decoration [bold, underline, strikethrought, ...] in all 1 row, all 1 col or a single cell
 - Customizable output format for Yes/No or True/False cols with Raw data, boolean, short or long formats
@@ -67,19 +68,19 @@ Important Note: You need to calc the values before the output. The values repres
  
  - 1.- Create an array with the values. First Row & Col will be Headers. cli-math-ml-table will detect the format of each col :smiley::
  
-        $Values = [ 
-                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col'],
-                ['[0]Test Name1      ',  '10',           'Test 1',      'yes',        'true',            'ok',        '1'],
-                ['[1]Test Name2',        '-110',         'test 2',      'no',         'false',           'ko',        '1'],
-                ['[2]Test Name3',        '-11023.2',     'null',        'y',          't',               'KO',        '0'],
-                ['[3]Test Name4',        '-',            '-',           'n',          'f',               'OK',        '1'],
-                ['[4]Test Name5',        '',             '',            '',           '',                '',          ''],
-                ['[5]Test Name6',        '11023.2',      'null',        '-',          '0',               'oK',        '1'],
-                ['[6]Test Name7',        'na',           'na',          '-',          '-',               'kO',        '0'],
-                ['[7]Test Name8',        'nan',          'nan',         '-',          '1',               '-',         '-'],
-                ['[8]Test Name9',        'null',         'null',        'null',       'null',            'null',      'null'],
-                ['[9]Test Name10      ', '10   ',        'Test 1   ',   'yes   ',     'true   ',         'ok   ',     '1   '],
-                ['[10]Test Name11',       null,           null,         null,         null,              null,        null],
+       $Values = [ 
+                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col', 'size5'],
+                ['[0]Test Name1      ',  '10',           'Test 1',      'yes',        'true',            'ok',        '1',           '12345678'],
+                ['[1]Test Name2',        '-110',         'test 2',      'no',         'false',           'ko',        '1',           '-12345678'],
+                ['[2]Test Name3',        '-11023.2',     'null',        'y',          't',               'KO',        '0',           '12345'],
+                ['[3]Test Name4',        '-',            '-',           'n',          'f',               'OK',        '1',           '-12345'],
+                ['[4]Test Name5',        '',             '',            '',           '',                '',          '',            '99999'],
+                ['[5]Test Name6',        '11023.2',      'null',        '-',          '0',               'oK',        '1',           '-9999'],
+                ['[6]Test Name7',        'na',           'na',          '-',          '-',               'kO',        '0',           'na'],
+                ['[7]Test Name8',        'nan',          'nan',         '-',          '1',               '-',         '-',           '-'],
+                ['[8]Test Name9',        'null',         'null',        'null',       'null',            'null',      'null',        'null'],
+                ['[9]Test Name10      ', '10   ',        'Test 1   ',   'yes   ',     'true   ',         'ok   ',     '1   ',        'nan'],
+                ['[10]Test Name11',       null,           null,         null,         null,              null,        null,           null],
             ];
 
  - 2.- Create the Class with the Values and draw the table:
@@ -90,7 +91,7 @@ Important Note: You need to calc the values before the output. The values repres
         $cli_table->draw();
 
 - Result Default simple table:
-![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_2.png?raw=true)
+![Screenshot of the Default simple table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_table_default_v_1_0_1.png?raw=true)
  
  - 3.- Draw the table with Raw input data. This code takes advantage of the previously created class. If it has not been created before, it must be created with $cli_table = new cli_math_ml_table($Values);:
 
@@ -105,13 +106,14 @@ Important Note: You need to calc the values before the output. The values repres
         $cli_table->draw();
 
 - Result simple table with RAW values:
-![Screenshot of the table with Raw Values for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_3.png?raw=true)
+![Screenshot of the table with Raw Values for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_table_raw_v_1_0_1.png?raw=true)
  
  - 4.- Draw the table with CUSTOM format. This code takes advantage of the previously created class. If it has not been created before, it must be created with $cli_table = new cli_math_ml_table($Values);:
 
         // Cols with special format
         $col_special_format = [
-            [ 'col_name' => 'Boolean Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' , 'background_color' => 'blue']
+            [ 'col_name' => 'Boolean Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' , 'background_color' => 'blue'],
+	        [ 'col_name' => 'size5', 'max_chars' => 5]
         ];
         
         // rows with special format
@@ -192,7 +194,7 @@ Important Note: You need to calc the values before the output. The values repres
         $cli_table->draw();
 
 - Result Customized table:
-![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_ml_table_4.png?raw=true)
+![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_table_custom_v_1_0_1.png?raw=true)
 
 **CONFIG VALUES:**
 
@@ -208,6 +210,7 @@ Important Note: You need to calc the values before the output. The values repres
 - col_formats: [Array] of whole cols format
 
     - col_name: [string] Name of the column to be formatted
+    - max_chars: [integer] Number of max width of column in chars for nambers
     - text_color: [string] Colour of the text
     - text_decoration: [string] Decoration of text ['bold', 'italic', 'underline', 'strikethrough', 'double_underline', 'curly_underline', 'blink', 'reverse', 'invisible']. Some values maybe they won't work.
     - background_color: [string] Colour of the background
