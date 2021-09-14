@@ -1,0 +1,9 @@
+2021-11-14 v.1.0.1
+Added new col_format => 'max_chars' parameter colum to do a fixed with in column.
+Positive numbers larger than size are parsed for column size 5 characters, for example, as '>9999'
+Negative numbers larger than size are parsed for column size 5 characters, for example, as '<-999'
+The signs '>' & '<' followed by a number are taken into account as number format
+Add to data example new col with fixed width to 5 chars
+
+2021-11-07 v.1.0.0
+First release
