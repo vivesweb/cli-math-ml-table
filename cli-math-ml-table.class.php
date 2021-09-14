@@ -5,12 +5,22 @@
  * 
  * This table is intended for use with Machine Learning in Data Engineering to detect erroneous data,
  * reorganize it, adjust it and clean the datasets before going through the Deep Learning process.
+ *
+ * 2021-11-14 v.1.0.1
+ * Added new col_format => 'max_chars' parameter colum to do a fixed with in column.
+ *   Positive numbers larger than size are parsed for column size 5 characters, for example, as '>9999'
+ *   Negative numbers larger than size are parsed for column size 5 characters, for example, as '<-999'
+ *   The signs '>' & '<' followed by a number are taken into account as number format
+ *   Add to data example new col with fixed width to 5 chars
+ *
+ * 2021-11-07 v.1.0.0
+ * First release
  * 
  * @author Rafael Martin Soto
  * @author {@link https://www.inatica.com/ Inatica}
  * @blog {@link https://rafamartin10.blogspot.com/ Blog Rafael Martin Soto}
  * @since September 2021
- * @version 1.0.0
+ * @version 1.0.1
  * @license GNU General Public License v3.0
 */
     
@@ -537,9 +547,18 @@ class cli_math_ml_table {
             for($j=0;$j<$num_cols;$j++){
                 if( is_null($values[$i][$j]) ){
                     $values[$i][$j] = 'null';
-                }
-            }
-        }
+                } else if( !is_null($this->table_format['col_formats']) ){
+					// Search Col formats for resize numbers to max_size if needed
+					
+					foreach( $this->table_format['col_formats'] as $col_format ){
+						if( trim( $col_format['col_name'] ) == trim( $values[0][$j] ) && isset($col_format['max_chars']) ){
+							$values[$i][$j] = $this->fit_number_max_chars(trim($values[$i][$j]), $col_format['max_chars']);
+							break;
+						}
+					}// /foreach $this->col_formats
+            	} // /if exists col_formats
+			} // /for $j
+        } // /for $i
 
         $this->table_cells_rows = [];
         
@@ -1043,6 +1062,55 @@ class cli_math_ml_table {
         unset( $i );
     } // /set_align_color_col()
 
+
+
+	/**
+	 * Cut the number to fit it in max_chars
+	 * 
+	 * @param double $number
+	 * @param int $max_chars
+	 * @return string $number_pigeonholed
+	 */
+
+	private function fit_number_max_chars( $number, $max_chars ){
+		$max_number_positive	= pow(10, $max_chars) - 1; // Give something like 999999
+		$max_number_negative	= -(pow(10, $max_chars-1) - 1); // Give something like -99999. One char is for '-' sign
+		$str_number 			= (string)$number;
+		$length_number 			= strlen($str_number);
+
+		if( $length_number <= $max_chars || !is_numeric($number) ){
+			$number_pigeonholed = $str_number;
+		} else if( $number < $max_number_negative ){
+			$number_pigeonholed = '<'.((int)($max_number_negative/10));
+		} else if( $number > $max_number_positive ){
+			$number_pigeonholed = '>'.((int)($max_number_positive/10));
+		} else {
+			list($whole, $decimal) = explode('.', $str_number);
+			$length_whole = strlen( $whole );
+			if( $length_whole >= $max_chars ){
+				$whole = substr($whole, -$max_chars);
+				$length_whole = strlen( $whole );
+			}
+			$number_pigeonholed = $whole;
+			if( !is_int($number) && $length_whole < $max_chars-1 ){
+				$remain_chars = $max_chars - $length_whole - strlen('.');
+				$cut_decimal = substr($decimal, 0, $remain_chars);
+				$number_pigeonholed .= '.'.$cut_decimal;
+			}
+		}
+
+		unset( $str_number );
+		unset( $length_number );
+		unset( $remain_chars );
+		unset( $length_whole );
+		unset( $cut_decimal );
+		unset( $whole );
+		unset( $decimal );
+
+		return $number_pigeonholed;
+	} // /fit_number_max_chars()
+	
+	
 
     /**
      * Get type of col

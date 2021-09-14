@@ -17,24 +17,25 @@ require_once 'cli-math-ml-table.class.php';
 //    * First row is 'Col Names'
 //    * First Col is 'Row Names'
 $Values = [ 
-                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col'],
-                ['[0]Test Name1      ',  '10',           'Test 1',      'yes',        'true',            'ok',        '1'],
-                ['[1]Test Name2',        '-110',         'test 2',      'no',         'false',           'ko',        '1'],
-                ['[2]Test Name3',        '-11023.2',     'null',        'y',          't',               'KO',        '0'],
-                ['[3]Test Name4',        '-',            '-',           'n',          'f',               'OK',        '1'],
-                ['[4]Test Name5',        '',             '',            '',           '',                '',          ''],
-                ['[5]Test Name6',        '11023.2',      'null',        '-',          '0',               'oK',        '1'],
-                ['[6]Test Name7',        'na',           'na',          '-',          '-',               'kO',        '0'],
-                ['[7]Test Name8',        'nan',          'nan',         '-',          '1',               '-',         '-'],
-                ['[8]Test Name9',        'null',         'null',        'null',       'null',            'null',      'null'],
-                ['[9]Test Name10      ', '10   ',        'Test 1   ',   'yes   ',     'true   ',         'ok   ',     '1   '],
-                ['[10]Test Name11',       null,           null,         null,         null,              null,        null],
+                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col', 'size5'],
+                ['[0]Test Name1      ',  '10',           'Test 1',      'yes',        'true',            'ok',        '1',				'12345678'],
+                ['[1]Test Name2',        '-110',         'test 2',      'no',         'false',           'ko',        '1',				'-12345678'],
+                ['[2]Test Name3',        '-11023.2',     'null',        'y',          't',               'KO',        '0',				'12345'],
+                ['[3]Test Name4',        '-',            '-',           'n',          'f',               'OK',        '1',				'-12345'],
+                ['[4]Test Name5',        '',             '',            '',           '',                '',          '',				'99999'],
+                ['[5]Test Name6',        '11023.2',      'null',        '-',          '0',               'oK',        '1',				'-9999'],
+                ['[6]Test Name7',        'na',           'na',          '-',          '-',               'kO',        '0',				'na'],
+                ['[7]Test Name8',        'nan',          'nan',         '-',          '1',               '-',         '-',				'-'],
+                ['[8]Test Name9',        'null',         'null',        'null',       'null',            'null',      'null',			'null'],
+                ['[9]Test Name10      ', '10   ',        'Test 1   ',   'yes   ',     'true   ',         'ok   ',     '1   ',			'nan'],
+                ['[10]Test Name11',       null,           null,         null,         null,              null,        null,				null],
             ];
 
             
 // Cols with special format
 $col_special_format = [
-    [ 'col_name' => 'Boolean Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' , 'background_color' => 'blue']
+    [ 'col_name' => 'Boolean Col', 'text_color' => 'lightwhite', 'text_decoration' => 'bold' , 'background_color' => 'blue'],
+	[ 'col_name' => 'size5', 'max_chars' => 5]
 ];
 
 // rows with special format
