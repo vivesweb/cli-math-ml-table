@@ -45,6 +45,8 @@ Important Note: You need to calc the values before the output. The values repres
     - Simple Raspberry pi (B +	512MB	700 MHz ARM11) with Raspbian Lite PHP7.3 (i love this gadgets)  :heart_eyes:
    
     - VirtualBox Ubuntu Server 20.04.2 LTS (Focal Fossa) with PHP7.4.3
+
+    - Mac OS X - 10.11.6.15G31 (Darwin) with PHP5.5.36
  
  
   # FILES:
