@@ -28,7 +28,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Color automatically in Bold Ok/Ko type (is important in ML cols datasets to know if the col is Ok or KO).
 - Customizable Inverse Headers
 - Customizable Text Color in all 1 row, all 1 col or a single cell
-- Customizable Width in a column for numbers. Numbers greatter than width will be parsed to >99999 | <-9999
+- Customizable Width in a column for numbers. Numbers greatter than width will be parsed to >99999 | <-9999 (From v.1.0.1)
 - Customizable Background Color in all 1 row, all 1 col or a single cell
 - Customizable Text Decoration [bold, underline, strikethrought, ...] in all 1 row, all 1 col or a single cell
 - Customizable output format for Yes/No or True/False cols with Raw data, boolean, short or long formats
