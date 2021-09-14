@@ -5,7 +5,7 @@
  * @author {@link https://www.inatica.com/ Inatica}
  * @blog {@link https://rafamartin10.blogspot.com/ Blog Rafael Martin Soto}
  * @since September 2021
- * @version 1.0.0
+ * @version 1.0.1
  * @license GNU General Public License v3.0
 */
 
@@ -17,7 +17,7 @@ require_once 'cli-math-ml-table.class.php';
 //    * First row is 'Col Names'
 //    * First Col is 'Row Names'
 $Values = [ 
-                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col', 'size5'],
+                ['Field Name',           'Numeric Col',  'String Col',  'Yes No Col', 'True False Col',  'Ok Ko Col', 'Boolean Col', 	'size5'],
                 ['[0]Test Name1      ',  '10',           'Test 1',      'yes',        'true',            'ok',        '1',				'12345678'],
                 ['[1]Test Name2',        '-110',         'test 2',      'no',         'false',           'ko',        '1',				'-12345678'],
                 ['[2]Test Name3',        '-11023.2',     'null',        'y',          't',               'KO',        '0',				'12345'],
