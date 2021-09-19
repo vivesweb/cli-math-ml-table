@@ -8,7 +8,7 @@
  * @author {@link https://www.inatica.com/ Inatica}
  * @blog {@link https://rafamartin10.blogspot.com/ Blog Rafael Martin Soto}
  * @since September 2021
- * @version 1.0.1
+ * @version 1.0.2
  * @license GNU General Public License v3.0
 */
 
@@ -536,7 +536,7 @@ class cli_math_ml_table_cell {
             $cleaned_value = $this->cleaned_value( );
 			
             $this->is_numeric = ( is_numeric( $cleaned_value ) || $cleaned_value == 'na' || $cleaned_value == 'nan' ) ||
-								( ($cleaned_value[0] == '<' || $cleaned_value[0] == '>') && is_numeric( substr($cleaned_value, 1 ))	);
+								( isset($cleaned_value[0]) && ($cleaned_value[0] == '<' || $cleaned_value[0] == '>') && is_numeric( substr($cleaned_value, 1 ))	);
             
             // Freemem()
             unset( $cleaned_value );
