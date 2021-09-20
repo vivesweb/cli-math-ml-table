@@ -1,6 +1,6 @@
 # View data structure in table format with features oriented to detect wrong data in datasets before deep learning process.
 
-## V.1.0.2
+## V.1.0.3
 
 Anyway you can to use this class to visualize any type of data. It cannot do any calc, only visualize the data in an understandable way.
 
@@ -27,6 +27,7 @@ The table incorporates useful elements focused on achieving optimal dataset qual
 - Color automatically Top row & first col in Bold for identify headers col & row.
 - Color automatically in Bold Ok/Ko type (is important in ML cols datasets to know if the col is Ok or KO).
 - Customizable Inverse Headers
+- Customizable draw or not interline separator
 - Customizable Text Color in all 1 row, all 1 col or a single cell
 - Customizable Width in a column for numbers. Numbers greatter than width will be parsed to >99999 | <-9999 (From v.1.0.1)
 - Customizable Background Color in all 1 row, all 1 col or a single cell
@@ -149,6 +150,7 @@ Important Note: You need to calc the values before the output. The values repres
             'indiv_formats' => $fields_special_format,
             'col_formats' => $col_special_format,
             'row_formats' => $row_special_format,
+    	    'draw_betw_line_separator' => true,
             'padding_cells_left' => 2,
             'padding_cells_right' => 2,
             'margin_left' => 10,
@@ -229,6 +231,7 @@ Important Note: You need to calc the values before the output. The values repres
 
 - padding_cells_left: [int] Num of Chars to padd left each cell
 - padding_cells_right: [int] Num of Chars to padd right each cell
+- draw_betw_line_separator: [bool] Enable or disable a line draw separator between data lines
 - margin_left: [int] Num of Chars of margin left table
 - margin_right: [int] um of Chars of margin right table
 - margin_top: [int] Num of Chars of margin top table
@@ -302,6 +305,6 @@ Important Note: You need to calc the values before the output. The values repres
  
  @since September 2021
  
- @version 1.0.2
+ @version 1.0.3
  
  @license GNU General Public License v3.0
