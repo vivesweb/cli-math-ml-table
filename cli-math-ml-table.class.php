@@ -6,6 +6,9 @@
  * This table is intended for use with Machine Learning in Data Engineering to detect erroneous data,
  * reorganize it, adjust it and clean the datasets before going through the Deep Learning process.
  *
+ * 2021-11-20 v.1.0.3
+ *   Added 'draw_betw_line_separator' param in config. If is true (by default), it draw a separator line between data lines.
+ * 
  * 2021-11-19 v.1.0.2
  *   Check if isset($cleaned_value[0]) in cli-math-ml-table-cell.class.php (line 539). It Crashed in some version of PHP if it did not exist.
  * 
@@ -23,7 +26,7 @@
  * @author {@link https://www.inatica.com/ Inatica}
  * @blog {@link https://rafamartin10.blogspot.com/ Blog Rafael Martin Soto}
  * @since September 2021
- * @version 1.0.1
+ * @version 1.0.3
  * @license GNU General Public License v3.0
 */
     
@@ -189,6 +192,7 @@ class cli_math_ml_table {
         'padding_cells_left' => 1,
         'padding_cells_right' => 1,
         'negative_numeric_in_red' => true,
+        'draw_betw_line_separator' => true, // Draw a separator line between data lines
         'border_style' => 'simple', // Style of borders ['simple'|'single'|'double'|'dobule_single']
         'reverse_headers' => false, // Style of headers
         'redraw_header_every_rows' => 20,
@@ -380,6 +384,10 @@ class cli_math_ml_table {
 
             if( isset($table_format['negative_numeric_in_red']) ){
                 $this->table_format['negative_numeric_in_red'] = $table_format['negative_numeric_in_red'];
+            }
+
+            if( isset($table_format['draw_betw_line_separator']) ){
+                $this->table_format['draw_betw_line_separator'] = $table_format['draw_betw_line_separator'];
             }
 
             if( isset($table_format['margin_left']) ){
@@ -617,7 +625,7 @@ class cli_math_ml_table {
             $this->str_basic_rw_ln_separator .= str_pad('', $cell_width, $borders['mid']); // '═'
             $this->str_top_basic_rw_ln_separator .= str_pad('', $cell_width, $borders['top']); // '═'
             $this->str_bottom_basic_rw_ln_separator .= str_pad('', $cell_width, $borders['bottom']); // '═'
-
+            
             $this->str_basic_rw_ln_separator .= $borders['mid-mid']; // '╬'
             $this->str_top_basic_rw_ln_separator .= $borders['top-mid']; // '╦'
             $this->str_bottom_basic_rw_ln_separator .= $borders['bottom-mid']; // '╩'
@@ -675,7 +683,9 @@ class cli_math_ml_table {
             }
 
             $output[] = $str_margin_left.$this->get_formatted_row( $row ).$str_margin_right.PHP_EOL;
-            $output[] = $str_margin_left.$this->str_basic_rw_ln_separator.$str_margin_right.PHP_EOL; // underline separator
+            if( $this->table_format['draw_betw_line_separator'] || $i == 1 ){
+                $output[] = $str_margin_left.$this->str_basic_rw_ln_separator.$str_margin_right.PHP_EOL; // underline separator
+            }
         }
 
         $output[ count($output)-1 ] = $str_margin_left.$this->str_bottom_basic_rw_ln_separator.$str_margin_right.PHP_EOL;
