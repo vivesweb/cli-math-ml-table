@@ -202,6 +202,9 @@ Important Note: You need to calc the values before the output. The values repres
 - Result Customized table:
 ![Screenshot of the CUSTOMIZED table for ML created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/example_cli_math_table_custom_v_1_0_1.png?raw=true)
 
+- Result Customized table without interline separator:
+![Screenshot of the CUSTOMIZED table for ML without interline separator created in Pure PHP](https://github.com/vivesweb/cli-math-ml-table/blob/main/data-csv-table-without-line.png?raw=true)
+
 **CONFIG VALUES:**
 
 - indiv_formats: [Array] of individual formats (each cell)
