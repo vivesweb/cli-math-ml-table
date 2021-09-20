@@ -7,7 +7,7 @@
  * reorganize it, adjust it and clean the datasets before going through the Deep Learning process.
  *
  * 2021-11-20 v.1.0.3
- *   Added 'draw_betw_line_separator' param in config. If is true (by default), it draw a separator line between data lines.
+ *   Added 'draw_betw_line_separator' param in config. If is true (by default), it draw a separator line between data lines. If is false, no line separator is drawed between lines
  * 
  * 2021-11-19 v.1.0.2
  *   Check if isset($cleaned_value[0]) in cli-math-ml-table-cell.class.php (line 539). It Crashed in some version of PHP if it did not exist.
