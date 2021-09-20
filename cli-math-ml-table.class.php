@@ -688,7 +688,9 @@ class cli_math_ml_table {
             }
         }
 
-        $output[ count($output)-1 ] = $str_margin_left.$this->str_bottom_basic_rw_ln_separator.$str_margin_right.PHP_EOL;
+        $Offset = (( $this->table_format['draw_betw_line_separator'] )?1:0);
+
+        $output[ count($output)-$Offset ] = $str_margin_left.$this->str_bottom_basic_rw_ln_separator.$str_margin_right.PHP_EOL;
 
         for($i=0;$i<$this->table_format['margin_bottom'];$i++){
             $output[] = PHP_EOL;
@@ -697,6 +699,7 @@ class cli_math_ml_table {
         unset( $str_margin_left );
         unset( $row );
         unset( $i );
+        unset( $Offset );
         unset( $str_margin_left );
         unset( $str_margin_right );
 
